@@ -9,8 +9,13 @@ namespace Tarea5Lab.DAL
     public class Contexto : DbContext
     {
         public DbSet<Productos> Productos {get; set;}
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-            optionsBuilder.UseSqlite(@"Data Source = Productos.db");
+          public Contexto(){}
+        
+        public Contexto(DbContextOptions<Contexto> options) : base(options){}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

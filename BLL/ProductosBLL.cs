@@ -13,39 +13,43 @@ namespace Tarea5Lab.BLL
     {
         private static bool Existe(int ID)
         {
-            bool está = false;
+            bool esta = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                está=contexto.Productos.Any(e=> e.ProductoId== ID);
-            }catch (Exception)
+                esta = contexto.Productos.Any(e => e.ProductoId == ID);
+            }
+            catch (Exception)
             {
                 throw;
-            }finally
+            }
+            finally
             {
                 contexto.Dispose();
             }
 
-            return está;
+            return esta;
         }
         public static bool Existe(string descrip)
         {
-            bool está = false;
+            bool esta = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                está=contexto.Productos.Any(e=> e.Descripcion==descrip);
-            }catch (Exception)
+                esta = contexto.Productos.Any(e => e.Descripcion == descrip);
+            }
+            catch (Exception)
             {
                 throw;
-            }finally
+            }
+            finally
             {
                 contexto.Dispose();
             }
 
-            return está;
+            return esta;
         }
         public static bool Insertar(Productos producto)
         {
@@ -54,12 +58,15 @@ namespace Tarea5Lab.BLL
 
             try
             {
+                producto.ValorInventario = producto.Costo * producto.Existencia;
                 contexto.Productos.Add(producto);
-                esta = contexto.SaveChanges()>0;
-            }catch(Exception)
+                esta = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
             {
                 throw;
-            }finally
+            }
+            finally
             {
                 contexto.Dispose();
             }
@@ -68,25 +75,35 @@ namespace Tarea5Lab.BLL
         }
         private static bool Modificar(Productos producto)
         {
-            bool esta = false;
+            bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
+                producto.ValorInventario = producto.Costo * producto.Existencia;
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProductosDetalle where ProductoId={producto.ProductoId}");
+                foreach(var anterior in producto.ProductosDetalle)
+                {
+                    contexto.Entry(anterior).State= EntityState.Added;
+                }
                 contexto.Entry(producto).State = EntityState.Modified;
-                esta = contexto.SaveChanges()>0;
-            }catch(Exception)
+                paso = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
             {
                 throw;
-            }finally{
+            }
+            finally
+            {
                 contexto.Dispose();
             }
 
-            return esta;
+            return paso;
         }
         public static bool Guardar(Productos producto)
         {
-            if(Existe(producto.ProductoId))
+            producto.Ganancia = Convert.ToInt32(((producto.Precio-producto.Costo)/producto.Costo)*100);
+            if (Existe(producto.ProductoId))
                 return Modificar(producto);
             else
                 return Insertar(producto);
@@ -98,11 +115,14 @@ namespace Tarea5Lab.BLL
 
             try
             {
-                producto = contexto.Productos.Find(ID);
-            }catch(Exception)
+                producto = contexto.Productos.Include(x => x.ProductosDetalle).Where( p => p.ProductoId == ID).SingleOrDefault();
+            }
+            catch (Exception)
             {
                 throw;
-            }finally{
+            }
+            finally
+            {
                 contexto.Dispose();
             }
             return producto;
@@ -115,33 +135,36 @@ namespace Tarea5Lab.BLL
             try
             {
                 var producto = contexto.Productos.Find(id);
-                if(producto !=null)
+                if (producto != null)
                 {
                     contexto.Productos.Remove(producto);
-                    paso=contexto.SaveChanges()>0;
+                    paso = contexto.SaveChanges() > 0;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
-            finally{
+            finally
+            {
                 contexto.Dispose();
             }
             return paso;
         }
-        public static List<Productos> GetList()
+        public static List<Productos> GetList(Expression<Func<Productos, bool>> criterio)
         {
             List<Productos> lista = new List<Productos>();
             Contexto contexto = new Contexto();
             try
             {
-                lista = contexto.Productos.ToList();
-            }catch(Exception)
+                lista = contexto.Productos.Where(criterio).ToList();
+            }
+            catch (Exception)
             {
                 throw;
             }
-            finally{
+            finally
+            {
                 contexto.Dispose();
             }
             return lista;

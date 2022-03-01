@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Components;
+using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Web;
 using Tarea5Lab.Data;
 using Tarea5Lab.DAL;
+using Tarea5Lab.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-/*builder.Services.AddDbContext<Contexto>(options =>
+builder.Services.AddBlazoredToast();
+builder.Services.AddDbContext<Contexto>(options =>
                  options.UseSqlite(builder.Configuration.GetConnectionString("ContStr"))
-);   */
+);   
 
 var app = builder.Build();
 

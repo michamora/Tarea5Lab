@@ -20,6 +20,12 @@ namespace Tarea5Lab.Entidades
 
          [ForeignKey("ProductoId")]
 
-        public virtual ProductosDetalle ProductosDetalle {get; set;}
+        public virtual List<ProductosDetalle> ProductosDetalle {get;set;}
+
+        public Productos()
+        {
+            ProductoId=0;
+            ProductosDetalle = new List<ProductosDetalle>();
+        }
     }
 }

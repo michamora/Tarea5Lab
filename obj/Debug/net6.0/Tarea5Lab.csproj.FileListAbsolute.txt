@@ -53,3 +53,4 @@ C:\Users\Michael\Documents\Aplicada 1\Tarea5Lab\bin\Debug\net6.0\runtimes\win-ar
 C:\Users\Michael\Documents\Aplicada 1\Tarea5Lab\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Michael\Documents\Aplicada 1\Tarea5Lab\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Michael\Documents\Aplicada 1\Tarea5Lab\obj\Debug\net6.0\Tarea5Lab.csproj.CopyComplete
+C:\Users\Michael\Documents\Aplicada 1\Tarea5Lab\bin\Debug\net6.0\Blazored.Toast.dll
