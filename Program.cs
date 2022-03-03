@@ -1,21 +1,28 @@
 using Microsoft.AspNetCore.Components;
 using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Web;
-using Tarea5Lab.Data;
+
 using Tarea5Lab.DAL;
-using Tarea5Lab.Entidades;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using Tarea5Lab.BLL;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddBlazoredToast();
-builder.Services.AddDbContext<Contexto>(options =>
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddBlazoredToast(); // Toast
+
+builder.Services.AddDbContext<Contexto>(options =>  // Db Context
                  options.UseSqlite(builder.Configuration.GetConnectionString("ContStr"))
 );   
+
+builder.Services.AddTransient<ProductosBLL>();
 
 var app = builder.Build();
 

@@ -8,24 +8,30 @@ namespace Tarea5Lab.Entidades
     {
         [Key]
         public int ProductoId { get; set; }
-        [Required(ErrorMessage ="Es obligatorio introducir la  descripción.")]
-        public string? Descripcion { get; set; }
-        public decimal Existencia { get; set; }
+
+        [Required(ErrorMessage = "Campo obligatorio. Se debe indicar la descripción.")]
+        [MinLength(3, ErrorMessage ="La descripción debe tener al menos {1} caractéres.")]
+        [MaxLength(35, ErrorMessage ="La descripción no debe pasar de {1} caractéres.")]
+        public string Descripcion { get; set; }
+
+        [Required(ErrorMessage = "Campo obligatorio. Se debe indicar la existencia.")]
+        [Range(0.1, int.MaxValue, ErrorMessage = "Se debe indicar la existencia del producto dentro de los rangos {1}/{2}.")]
+        public double Existencia { get; set; }
+
         [Required(ErrorMessage = "El Campo \"Costo\"está vacío. Por favor indique un costo.")]
-        [Range(1,int.MaxValue, ErrorMessage ="El costo debe estar dentro del rango permitido")]
-        public decimal Costo { get; set; }
-        public decimal ValorInventario { get; set; }
-        public decimal Precio { get; set; }
-        public decimal Ganancia { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "El costo debe estar dentro del rango permitido {1}/{2}.")]
+        public double Costo { get; set; }
 
-         [ForeignKey("ProductoId")]
+        public double ValorInventario { get; set; }
+        [Required(ErrorMessage = "Campo obligatorio. Se debe indicar el precio.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Se debe indicar el precio del producto dentro de los rangos {1}/{2}.")]
+        public double Precio { get; set; }
+        
+        public int Ganancia { get; set; }
 
-        public virtual List<ProductosDetalle> ProductosDetalle {get;set;}
+        [ForeignKey("ProductoId")]
 
-        public Productos()
-        {
-            ProductoId=0;
-            ProductosDetalle = new List<ProductosDetalle>();
-        }
+        public virtual List<ProductosDetalle> ProductosDetalle {get;set;}= new List<ProductosDetalle>();
+ 
     }
 }
