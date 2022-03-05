@@ -12,39 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 404918006,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Pages.FetchData",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": 302381646,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Pages.FetchData",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tarea5Lab.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 1082757934,
         "Kind": "Components.Component",
         "Name": "Tarea5Lab.Pages.Index",
@@ -131,39 +98,6 @@
         }
       },
       {
-        "HashCode": -1929733995,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Pages.C_Productos",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "C_Productos"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Pages.C_Productos"
-        }
-      },
-      {
-        "HashCode": 2126048241,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Pages.C_Productos",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tarea5Lab.Pages.C_Productos"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Pages.C_Productos",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 1120672223,
         "Kind": "Components.Component",
         "Name": "Tarea5Lab.Pages.R_Productos",
@@ -217,6 +151,39 @@
         }
       },
       {
+        "HashCode": -1929733995,
+        "Kind": "Components.Component",
+        "Name": "Tarea5Lab.Pages.C_Productos",
+        "AssemblyName": "Tarea5Lab",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "C_Productos"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea5Lab.Pages.C_Productos"
+        }
+      },
+      {
+        "HashCode": 2126048241,
+        "Kind": "Components.Component",
+        "Name": "Tarea5Lab.Pages.C_Productos",
+        "AssemblyName": "Tarea5Lab",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tarea5Lab.Pages.C_Productos"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea5Lab.Pages.C_Productos",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -472125593,
         "Kind": "Components.Component",
         "Name": "Tarea5Lab.App",
@@ -246,39 +213,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tarea5Lab.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1556152409,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Shared.NavMenu",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": 1279638016,
-        "Kind": "Components.Component",
-        "Name": "Tarea5Lab.Shared.NavMenu",
-        "AssemblyName": "Tarea5Lab",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tarea5Lab.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea5Lab.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -428,6 +362,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tarea5Lab.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1556152409,
+        "Kind": "Components.Component",
+        "Name": "Tarea5Lab.Shared.NavMenu",
+        "AssemblyName": "Tarea5Lab",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea5Lab.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": 1279638016,
+        "Kind": "Components.Component",
+        "Name": "Tarea5Lab.Shared.NavMenu",
+        "AssemblyName": "Tarea5Lab",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tarea5Lab.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea5Lab.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -17260,11 +17227,6 @@
     {
       "FilePath": "c:\\Users\\Michael\\Documents\\Aplicada 1\\Tarea5Lab\\Pages\\R_Productos.razor",
       "TargetPath": "Pages\\R_Productos.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Michael\\Documents\\Aplicada 1\\Tarea5Lab\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {

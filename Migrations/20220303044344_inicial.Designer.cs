@@ -10,7 +10,7 @@ using Tarea5Lab.DAL;
 namespace Tarea5Lab.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220303041047_inicial")]
+    [Migration("20220303044344_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
